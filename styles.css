@@ -1,0 +1,139 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 20px;
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .logo a {
+    color: #0d0d0d;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+    align-items: center;
+     justify-content: space-between;
+}
+
+.navbar ul li a {
+    color: #171515;
+    text-decoration: none;
+    font-size: 18px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    color: #8f6fba;
+}
+
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    color: rgb(17, 17, 17);
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none; 
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: #333;
+        animation: slideIn 0.3s ease-out; 
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+        opacity: 0; 
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    .navbar ul li:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+    .navbar ul li:nth-child(2) {
+        animation-delay: 0.4s;
+    }
+
+
+    .navbar.active ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block; 
+    }
+}
+
+
+@keyframes slideIn {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 70px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.container {
+    display: flex;
+    align-items: center; 
+  }
+  
+  .image-section {
+    flex: 1; 
+  }
+  
+  .text-section {
+    flex: 1;  
+    padding-left: 20px;  
+  }
+  
+  .image {
+    width: 100%; 
+    height: auto;
+  }
